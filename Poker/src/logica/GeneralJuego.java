@@ -12,9 +12,6 @@ public interface GeneralJuego {
     
         public int getCartasVisibles();
         
-        
-  
-
         public void setCartasVisibles(int CartasVisibles);
 
         public Mazo getMazoGeneral();
