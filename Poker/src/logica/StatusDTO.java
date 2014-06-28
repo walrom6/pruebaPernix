@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 
 
@@ -28,8 +23,6 @@ public class StatusDTO {
     {
         System.out.println(verificarApuestasIguales());
         
-        /*while(verificarRestoApuesta() == false)
-        { */
             if (verificarApuestasIguales())
             {
                 ListaPozos.add(new Pozo(ListaApuestas));
@@ -54,13 +47,14 @@ public class StatusDTO {
     }
     
     public ArrayList<Jugador> repartirPots(ArrayList<Jugador> listaGanadores)
-    {   System.out.println("Largo Lista pozos : "+ListaPozos.size());
+    {   
+
         int i = 0;
         while (!ListaPozos.isEmpty())
         {
             if (estaEnPot(listaGanadores.get(i)))
             {
-                System.out.println("Total del pozo");
+            
                 imprimirListaPozo();
                 listaGanadores.get(i).cantidadDinero = listaGanadores.get(i).cantidadDinero + ListaPozos.get(0).TotalPozo();
                 ListaPozos.remove(0);
@@ -92,7 +86,7 @@ public class StatusDTO {
         //Verifica que las apuestas de la lista sean iguales.
     //Salida: 
     //      true, si las apuestas son iguales.
-    //      false, si las apuestas son distitas.
+    //      false, si las apuestas son distintas.
     public boolean verificarApuestasIguales()
     {
         int i = 0;
@@ -101,12 +95,12 @@ public class StatusDTO {
         {
             if(i+1 == ListaApuestas.size())
             {
-                //System.out.println("true");
+
                 return true;
             }
             else if (ListaApuestas.get(i).valor != ListaApuestas.get(i+1).valor)
             {
-                //System.out.println("false");
+
                 return false;
             }
             i++;
